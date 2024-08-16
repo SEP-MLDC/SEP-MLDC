@@ -43,18 +43,14 @@ class SupConLoss(nn.Module):
         # compute log_prob
         exp_logits = torch.exp(logits) * logits_mask
         log_prob = logits - torch.log(exp_logits.sum(1, keepdim=True))
-        log_prob = torch.nan_to_num(log_prob, nan=0.0)
         if torch.any(torch.isnan(log_prob)):
             raise ValueError("Log_prob has nan!")
-        
-
         
         # compute mean of log-likelihood over positive
         mean_log_prob_pos = (mask * log_prob).sum(1) / (mask.sum(1)+1)
         if label_rela is not None:
             mean_log_prob_pos = mean_log_prob_pos / label_rela
             
-        mean_log_prob_pos = torch.nan_to_num(mean_log_prob_pos, nan=0.0)
         if torch.any(torch.isnan(mean_log_prob_pos)):
             raise ValueError("mean_log_prob_pos has nan!")
 
