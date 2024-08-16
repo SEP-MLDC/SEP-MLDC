@@ -32,12 +32,7 @@ class SupConLoss(nn.Module):
         logits = anchor_dot_contrast - logits_max.detach()
 
         # mask-out self-contrast cases
-        logits_mask = torch.scatter(
-            torch.ones_like(mask),
-            1,
-            torch.arange(batch_size).view(-1, 1).to(self.args.device),
-            0
-        )
+        logits_mask = torch.where(weight==1, 0, 1)
         mask = mask * logits_mask
 
         # compute log_prob
