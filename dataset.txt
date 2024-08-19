@@ -1,0 +1,4 @@
+Processed data download: 
+AAPD: https://drive.google.com/file/d/1QoqcJkZBHsDporttTxaYWOM_ExSn7-Dz/view
+EUR-Lex: https://eur-lex.europa.eu/
+RCV1: https://trec.nist.gov/data/reuters/reuters.html
