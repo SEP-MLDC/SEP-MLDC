@@ -57,10 +57,10 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     
-    seed = 1000
+    seed = 1001
     torch.manual_seed(seed)            # 为CPU设置随机种子
     torch.cuda.manual_seed(seed) 
-    
+
     if args.current == "train":
         model_trainer = Trainer(args)
         model_trainer.train()
