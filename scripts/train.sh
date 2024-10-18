@@ -6,7 +6,7 @@ python main/work.py \
     --tokenizer_name 'plm/roberta' \
     --bert_name 'plm/roberta' \
     --label_detail 'AAPD/label_detail.json' \
-    --device 'cuda:0' \
+    --device 'cuda:1' \
     --epoch 100 \
     --batch_size 64 \
     --max_length 384 \
