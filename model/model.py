@@ -128,7 +128,6 @@ class Model(nn.Module):
         feature = torch.cat((e_l, feature), dim=1)
 
         output = self.classifier(feature)
-
         return output, label_loss, loss_con_1, loss_con_2, loss_distance, loss_con_l
         
 
