@@ -132,5 +132,4 @@ def my_collate(batch):
         'labels' : label,
         'y_true' : y_true
     }
-    
     return  data
